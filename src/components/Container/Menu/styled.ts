@@ -26,6 +26,7 @@ export const Headers = styled.div`
   padding: 0 70px 10px;
 `
 export const MenuItem = styled(Menu.Item)`
+  height: 48px !important;
   &:hover {
     background-color: #321fdb !important;
   }

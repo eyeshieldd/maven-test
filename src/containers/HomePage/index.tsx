@@ -1,7 +1,7 @@
 import { FC, useMemo } from 'react'
 import Container, { Crumb } from 'components/Container'
-import { BackTop, Card, Col, Row } from 'antd'
-import { UpButton, Cards1, Cards2, Cards3, Cards4 } from './styled'
+import { Card, Col, Row } from 'antd'
+import { Title, Number, Cards1, Cards2, Cards3, Cards4 } from './styled'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import datachart from './data.json'
 import datacharts from './datachart.json'
@@ -14,38 +14,33 @@ const HomePage: FC = () => {
   return (
     <>
       <Container crumbs={crumbs}>
-        <BackTop>
-          <UpButton>UP</UpButton>
-        </BackTop>
         <Row gutter={[24, 24]} justify="center">
           <Col sm={24} md={8} lg={6}>
             <Cards1>
-              <span style={{ fontSize: 18, fontWeight: 600 }}>
-                1,997,876.38
-              </span>
+              <Number>1,997,876.38</Number>
               <br />
-              <span style={{ fontSize: 14 }}>Balance Fund ($)</span>
+              <Title>Balance Fund ($)</Title>
             </Cards1>
           </Col>
           <Col sm={24} md={8} lg={6}>
             <Cards2>
-              <span style={{ fontSize: 18, fontWeight: 600 }}>10,651.26</span>
+              <Number>10,651.26</Number>
               <br />
-              <span style={{ fontSize: 14 }}>Balance Unit</span>
+              <Title>Balance Unit</Title>
             </Cards2>
           </Col>
           <Col sm={24} md={8} lg={6}>
             <Cards3>
-              <span style={{ fontSize: 18, fontWeight: 600 }}>87.56</span>
+              <Number>87.56</Number>
               <br />
-              <span style={{ fontSize: 14 }}>ROI(%)</span>
+              <Title>ROI(%)</Title>
             </Cards3>
           </Col>
           <Col sm={24} md={8} lg={6}>
             <Cards4>
-              <span style={{ fontSize: 18, fontWeight: 600 }}>38</span>
+              <Title>38</Title>
               <br />
-              <span style={{ fontSize: 14 }}>Total Partners</span>
+              <Number>Total Partners</Number>
             </Cards4>
           </Col>
           <Col sm={24} lg={12}>

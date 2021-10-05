@@ -1,16 +1,12 @@
 import styled from 'styled-components'
 import { Card } from 'antd'
 
-export const UpButton = styled.div`
-  cursor: pointer;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-  border-radius: 60px;
-  background-color: #001529;
-  color: #fff;
-  text-align: center;
-  font-size: 14;
+export const Title = styled.span`
+  font-size: 18px;
+  font-weight: 600px;
+`
+export const Number = styled.span`
+  font-size: 14px;
 `
 export const Cards1 = styled(Card)`
   background: linear-gradient(45deg, #321fdb, #1f1498) !important;
