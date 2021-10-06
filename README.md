@@ -4,6 +4,7 @@
 
 - #### Node JS
 - #### React JS
+- #### React-Chartjs2
 - #### NPM (Package Manager)
 
 ## How to run
