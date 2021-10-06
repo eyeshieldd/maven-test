@@ -46,7 +46,7 @@ const Container: FC<Props> = ({ children, crumbs }: Props) => {
             })}
             <Span>Dashboard</Span>
             <Span>Users</Span>
-            <Span>Settings</Span>
+            <Span>Partners</Span>
           </Head>
           <WrapperCrumbs>
             <Breadcrumbs crumbs={crumbs} />
@@ -54,7 +54,8 @@ const Container: FC<Props> = ({ children, crumbs }: Props) => {
         </Wrapper>
         <Contents>{children}</Contents>
         <Footers>
-          <span>RAVTEL @ 2021 </span>
+          <span style={{ color: 'blue' }}>RAVTEL</span>
+          <span>@ 2021</span>
           <span style={{ marginLeft: 110 }}>ebab246</span>
         </Footers>
       </Layout>

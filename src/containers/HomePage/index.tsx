@@ -1,10 +1,98 @@
-import { FC, useMemo } from 'react'
+import React, { FC, useMemo } from 'react'
 import Container, { Crumb } from 'components/Container'
 import { Card, Col, Row } from 'antd'
 import { Title, Number, Cards1, Cards2, Cards3, Cards4 } from './styled'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
-import datachart from './data.json'
-import datacharts from './datachart.json'
+import { Line } from 'react-chartjs-2'
+
+const data = {
+  labels: [
+    '31/01/2021',
+    '31/02/2021',
+    '31/03/2021',
+    '31/05/2021',
+    '31/05/2021',
+    '31/06/2021',
+    '31/07/2021',
+    '31/08/2021',
+    '31/09/2021',
+    '31/10/2021',
+    '31/11/2021',
+    '31/12/2021',
+    '31/12/2022',
+    '31/12/2022',
+  ],
+  datasets: [
+    {
+      label: 'NAV',
+      data: [
+        100, 110, 120, 130, 140, 150, 160, 170, 171, 179, 174, 169, 170, 190,
+      ],
+      fill: true,
+      backgroundColor: '#2d8be0',
+      borderColor: '#2d8be0',
+    },
+  ],
+}
+const options: any = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+}
+
+const data2 = {
+  labels: [
+    '31/01/2021-21/01/2021',
+    '31/02/2021-21/01/2021',
+    '31/03/2021-21/01/2021',
+    '31/05/2021-21/01/2021',
+    '31/05/2021-21/01/2021',
+    '31/06/2021-21/01/2021',
+    '31/07/2021-21/01/2021',
+    '31/08/2021-21/01/2021',
+    '31/09/2021-21/01/2021',
+    '31/10/2021-21/01/2021',
+    '31/11/202121/01/2021',
+    '31/12/2021-21/01/2021',
+    '31/12/2022-21/01/2021',
+    '31/12/2022-21/01/2021',
+  ],
+  datasets: [
+    {
+      label: 'Subsription',
+      data: [
+        100000, 120000, 100000, 100000, 100000, 100000, 100000, 100000, 100000,
+        100000, 100000, 100000, 100000, 1000000,
+      ],
+      fill: true,
+      backgroundColor: 'grey',
+      borderColor: 'grey',
+    },
+    {
+      label: 'Redemption',
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      fill: true,
+      backgroundColor: 'red',
+      borderColor: 'red',
+    },
+  ],
+}
+const options2: any = {
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+}
 
 const HomePage: FC = () => {
   const crumbs: ReadonlyArray<Crumb> = useMemo(() => {
@@ -45,62 +133,12 @@ const HomePage: FC = () => {
           </Col>
           <Col sm={24} lg={12}>
             <Card title="1Y Performance" bordered={false}>
-              <AreaChart
-                width={450}
-                height={250}
-                data={datacharts}
-                margin={{
-                  top: 10,
-                  right: 30,
-                  left: 0,
-                  bottom: 0,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis dataKey="amt" />
-                <Tooltip />
-                <Area
-                  type="monotone"
-                  dataKey="amt"
-                  stroke="#8884d8"
-                  fill="#2e8de4"
-                  activeDot={{ r: 13 }}
-                />
-              </AreaChart>
+              <Line data={data} options={options} />
             </Card>
           </Col>
           <Col sm={24} lg={12}>
             <Card title="Transfers" bordered={false}>
-              <AreaChart
-                width={450}
-                height={250}
-                data={datachart}
-                margin={{
-                  top: 10,
-                  right: 30,
-                  left: 0,
-                  bottom: 0,
-                }}
-              >
-                <CartesianGrid strokeDasharray="4 8" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Area
-                  type="monotone"
-                  dataKey="uv"
-                  stroke="#8884d8"
-                  fill="red"
-                  activeDot={{ r: 16 }}
-                />
-                <Area
-                  type="monotone"
-                  dataKey="pv"
-                  stroke="#8884d8"
-                  fill="black"
-                />
-              </AreaChart>
+              <Line data={data2} options={options2} />
             </Card>
           </Col>
         </Row>
