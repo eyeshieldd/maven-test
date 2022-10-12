@@ -7,6 +7,7 @@
 - #### React-Chartjs2
 - #### NPM (Package Manager)
 - #### Chart js
+- #### HTML
 
 ## How to run
 
