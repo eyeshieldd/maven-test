@@ -8,6 +8,7 @@
 - #### NPM (Package Manager)
 - #### Chart js
 - #### HTML
+- #### CSS
 
 ## How to run
 
